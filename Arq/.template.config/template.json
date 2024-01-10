@@ -1,0 +1,18 @@
+  {
+      "author": "lu-css",
+      "classifications": ["Common", "Console", "C#"],
+      "name": "Arq",
+      "identity": "Arq.New",
+      "shortName": "arq",
+      "tags": {
+          "language": "C#",
+          "type": "common"
+      },
+      "sourceName": "Arq",
+      "preferNameDirectory": true,
+      "primaryOutputs": [
+          "./Arq.Application/Arq.Application.csproj",
+          "./Arq.Infra/Arq.Infra.csproj",
+          "./Arq.UI/Arq.UI.csproj"
+      ]
+  }
