@@ -1,6 +1,6 @@
-@Arq.UI_HostAddress = http://localhost:5175
+@Guardian.UI_HostAddress = http://localhost:5175
 
-GET {{Arq.UI_HostAddress}}/weatherforecast/
+GET {{Guardian.UI_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
