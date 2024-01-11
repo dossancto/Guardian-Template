@@ -1,0 +1,18 @@
+  {
+      "author": "lu-css",
+      "classifications": ["Common", "Web", "C#"],
+      "name": "Guardian",
+      "identity": "Guardian.New",
+      "shortName": "guardian",
+      "tags": {
+          "language": "C#",
+          "type": "common"
+      },
+      "sourceName": "Guardian",
+      "preferNameDirectory": true,
+      "primaryOutputs": [
+          "./Guardian.Application/Guardian.Application.csproj",
+          "./Guardian.Infra/Guardian.Infra.csproj",
+          "./Guardian.UI/Guardian.UI.csproj"
+      ]
+  }
