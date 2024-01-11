@@ -8,6 +8,7 @@ internal static class UserUseCasesInjection
     public static IServiceCollection AddUserUseCases(this IServiceCollection services)
       => services
                 .AddScoped<RegisterUserUseCase>()
+                .AddScoped<LoginUserUseCase>()
       ;
 }
 

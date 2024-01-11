@@ -3,6 +3,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Guardian.UI.Controllers.Users;
 
+/// <summary>
+/// User representation without sensive data.
+/// </summary>
 public record SafeUserResponse
 {
     /// <summary>
@@ -20,6 +23,10 @@ public record SafeUserResponse
     [EmailAddress]
     public string Email { get; set; } = default!;
 
+    /// <summary>
+    /// Converts a user entity into a safe version
+    /// without sensive information.
+    /// </summary>
     public static SafeUserResponse From(User x)
       => new()
       {
@@ -27,4 +34,3 @@ public record SafeUserResponse
           Email = x.Email
       };
 }
-

@@ -8,9 +8,11 @@ namespace Guardian.UI.Controllers.Users;
 public partial class UserController : ControllerBase
 {
     private readonly RegisterUserUseCase _register;
+    private readonly LoginUserUseCase _login;
 
-    public UserController(RegisterUserUseCase register)
+    public UserController(RegisterUserUseCase register, LoginUserUseCase login)
     {
         _register = register;
+        _login = login;
     }
 }
