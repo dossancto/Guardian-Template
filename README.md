@@ -1,16 +1,21 @@
 # Arq
 
-## Install
+## Setup
 
-- On Linux
+- Clone the repo
+    ```sh
+    git clone https://github.com/lu-css/ArqNew.git
+    ```
+
+- Install the template
 
     ```sh
-    dotnet new -i ./
+    dotnet new -i .
     ```
 
 ## Usage
 
 - Create Project
     ```sh
-    dotnet new arq -o Your.Application.Name
+    dotnet new guardian -o Your.Application.Name
     ```
