@@ -1,4 +1,5 @@
 using Guardian.DependencyInjection;
+using Guardian.UI.Configurations;
 using Guardian.UI.Controllers.Middlewares.ErrorHandlers;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,37 +9,11 @@ builder.Services
 
 builder.Services.AddControllers();
 
-builder.Services
-    .AddEndpointsApiExplorer()
-    .AddSwaggerGen(c =>
-    {
-        c.CustomSchemaIds(type => type.ToString());
-
-        var assemblies = new List<string>() { "Arq.UI", "Arq.Application" };
-
-        var baseDir = System.AppContext.BaseDirectory;
-
-        foreach (var ass in assemblies)
-        {
-            var path = Path.Combine(System.AppContext.BaseDirectory, $"{ass}.xml");
-
-            c.IncludeXmlComments(path);
-        }
-    });
+builder.Services.AddOpenAPI();
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-
-    app.UseReDoc(options =>
-    {
-        options.DocumentTitle = "Endpoints documentation";
-        options.SpecUrl = "/swagger/v1/swagger.json";
-    });
-}
+app.UseOpenAPI();
 
 app.UseHttpsRedirection();
 
