@@ -47,7 +47,8 @@ public class EFUserRepository : IUserRepository
 
     public async Task DeleteById(string id)
     {
-        var user = await _context.Users.FindAsync(id);
+        var user = await _context.Users.Where(x => x.Id == id).FirstOrDefaultAsync();
+        Console.WriteLine(user?.Id ?? "User not found");
 
         if (user is null)
             return;
